@@ -10,6 +10,8 @@ public enum Size
 }
 public class CharacterController : MonoBehaviour
 {   //Movement
+   
+    public Character character;
     //public event EventHandler OnSizeChanged;
     [SerializeField]  private Size size=Size.large;
     [SerializeField] private float speed;
@@ -42,9 +44,8 @@ public class CharacterController : MonoBehaviour
         {
             moveVelocity = speed;
         }
-
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
-
+        
     }
     public void IncreaseSize()
     {
